@@ -2,7 +2,7 @@ grocery = ['bread', 'milk', 'butter']
 enumerateGrocery = enumerate(grocery)
 
 print(type(enumerateGrocery))
-
+print(enumerateGrocery)
 # converting to list
 print(list(enumerateGrocery))
 

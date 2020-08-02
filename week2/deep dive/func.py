@@ -1,5 +1,5 @@
-def add(a,b):
-    sum=a+b
+def add(a,b): 
+    sum = a+b
     return (sum)
 
 num1=input("Enter first number")
