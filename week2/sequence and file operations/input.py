@@ -12,3 +12,4 @@ print("Welcome ",name)
 print("Your age is ",age)
 
 print("After 5 years, your age will be :",(int(age)+5))
+print(int(name))
