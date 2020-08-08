@@ -1,42 +1,45 @@
 import os 
 import pandas as pd
+import numpy as np
+from scipy import stats
 
 x = pd.read_csv('bank-data.csv')
-print(x.job)
-type(x.job)
-list1 = [x.job]
-print(list1)
-map(str,list1)
-print(list1)
-type(list1)
-for i in list1:
-    print(type(i))
-management = 0
-admin = 0
-blue_collar = 0
-entre = 0
-housemaid = 0
-management = 0
-selfem = 0
-for i in x.job:
-    if(i == 'management'):
-        management = management + 1
-    elif(i == 'admin.'):
-        admin = admin + 1
-    elif(i == 'blue-collar'):
-        blue_collar = blue_collar + 1
-    elif(i == 'entrepreneur'):
-        entre = entre + 1 
-    elif(i == 'housemaid'):
-        housemaid = housemaid + 1
-    elif(i == 'management'):
-        management = management + 1
-    elif(i == 'self-employed'):
-        selfem = selfem + 1 
-        
-print("management count",management)
-print("admin count : ",admin)
-print("blue_coller count : ",blue_collar)
-print("entrepreneur count : ",entre)
-print("")
+df = pd.DataFrame(x)
+type(df)
+print(df)
+df.to_csv('bank-data.csv',index=False,sep = ',')
+df_csv = pd.read_csv('bank-data.csv',header=0,sep=',')
+help(df_csv)
+df_csv.ndim
+df_csv["job"]
 
+for i in df_csv["job"]:
+    print(i)
+
+job_count = df_csv.pivot_table(index=['job'], aggfunc='size')
+print(job_count)
+
+print(max(job_count))
+print(min(job_count))
+mean = np.mean(job_count)
+mode = stats.mode(job_count)
+print(mode)
+
+unique_jobs = dict(job_count)
+print(unique_jobs)
+
+accepted = []
+accepted = unique_jobs.keys()
+loan = (job_count >= mean)
+print(loan)
+loan_df = pd.DataFrame(loan)
+type(loan_df)
+print(loan_df)
+loan_df
+print(loan_df)
+please = dict(loan_df)
+type(please)
+people = input("enter profession : ")
+if people in please : 
+    if please == True :
+        print("ok")
