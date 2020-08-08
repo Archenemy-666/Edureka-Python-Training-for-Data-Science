@@ -40,6 +40,10 @@ print(loan_df)
 please = dict(loan_df)
 type(please)
 people = input("enter profession : ")
-if people in please : 
-    if please == True :
-        print("ok")
+#if people in please : 
+#   if please == True :
+#       print("ok")
+elements = dict(loan_df)
+print(elements)
+print(elements.get(people))
+print(unique_jobs)
