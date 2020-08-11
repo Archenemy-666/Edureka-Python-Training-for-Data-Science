@@ -1,4 +1,4 @@
-a=30
+-a=30
 def add(b):
     c=30
     print("c= ",c)

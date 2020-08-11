@@ -40,10 +40,11 @@ print(re.sub('(?i)ab', '*', 'ab AB'))
 
 
 
-
+"""
 
 # search and match
 
 print(re.search('ab','Here is an absolute string'))
 
-print(re.match('ab','Here is an absolute string'))"""
+print(re.match('ab','Here is an absolute string'))
+

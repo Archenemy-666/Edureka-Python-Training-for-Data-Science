@@ -197,12 +197,24 @@ for i in d:
     l.append(z)
 print(','.join(map(str,l)))
 '''
-
+'''
 #NOT COMPLETE
 #Write a program which takes 2 digits,
 #  X,Y as input and generates a 2-dimensional array. 
 # The element value in the i-th row and j-th column of the array should be i*j.
 # Note: i=0,1.., X-1; j=0,1,¡-Y-1
+ 
+import numpy as np 
+x = int(input("x : "))
+y = int(input("y : "))
+arr = np.empty((x,y))
+print(arr)
+for i in range(0,x):
+    for j in range(0,y):
+         arr[i,j] = i*j
+print(arr) 
+
+''' 
 
 
 #Write a program that accepts a comma separated sequence 
