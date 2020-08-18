@@ -102,8 +102,39 @@ print(swap)
 #--------------------------------------------------------------------------------------------------------------
 #15 question 
 import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+import seaborn as sns
 schoool_table = pd.read_csv('middle_tn_schools.csv',delimiter=',')
 df = pd.DataFrame(schoool_table)
 #schools with rating 0 arent qualified to be part of the table 
 updated = df[df['school_rating'] >= 1.0]    
 updated
+df.describe()
+x = np.array(df['school_rating'])
+y = np.array(df['size'])
+print("rating vs size")
+print(plt.scatter(y,x))
+
+print("student to techer ratio vs rating")
+z = np.array(df['stu_teach_ratio'])
+plt.xlim(0,30)
+print(plt.scatter(z,x))
+
+print("student to techer ratio vs rating")
+z = np.array(df['reduced_lunch'])
+print(plt.scatter(z,x))
+
+relation = df[['reduced_lunch','school_rating']]
+relation
+rel = relation.corr()
+rel
+
+group1 = df.groupby(['school_rating']).groups
+print(group1)
+group1.describe()
+
+cor = df.corr()
+print(cor)
+sns.heatmap(cor,square = True,cmap = "YlGnBu")
+
