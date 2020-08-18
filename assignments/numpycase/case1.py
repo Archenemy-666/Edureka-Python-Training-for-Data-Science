@@ -99,3 +99,11 @@ swap[0]
 swap[1]
 swap[[0, 1],:] = swap[[1, 0],:]
 print(swap)
+#--------------------------------------------------------------------------------------------------------------
+#15 question 
+import pandas as pd 
+schoool_table = pd.read_csv('middle_tn_schools.csv',delimiter=',')
+df = pd.DataFrame(schoool_table)
+#schools with rating 0 arent qualified to be part of the table 
+updated = df[df['school_rating'] >= 1.0]    
+updated

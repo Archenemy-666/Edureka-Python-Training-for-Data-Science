@@ -1,5 +1,6 @@
 import pandas as pd 
 import re
+
 table = pd.read_csv('FairDealCustomerData.csv',delimiter=',',header=None)
 df = pd.DataFrame(table)
 print(df)
@@ -13,6 +14,11 @@ df['lastname'] = namesplit[3]
 df.drop(columns= [0],inplace = True)
 df.drop(columns = [1], inplace= True)
 df.to_csv('newradings.csv')
+file1 = pd.read_csv('newradings.csv')
+name = input("input name : ")
+for line in new:
+    print line 
+
 
 
 
