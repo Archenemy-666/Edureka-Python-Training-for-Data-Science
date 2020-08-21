@@ -70,3 +70,20 @@ page3_6 = page3_4.replace(to_replace='X',value = 'XX-XX',regex = True)
 page3_7 = pd.Series(['12', '-$10', '$10,000'])
 
 page3_7.replace('$','')
+
+page3_8 = pd.Series(['india 1998', 'big country', np.nan])
+page3_8[::-1]
+
+page4 = pd.Series(['1', '2', '1a', '2b', '2003c'])
+page4.str.isalnum()
+
+page5 = pd.Series(['1', '2', '1a', '2b', 'America', 'VietnAm','vietnam', '2003c'])
+page5.str.contains('A')
+
+page5_1 = pd.Series(['a', 'a|b', np.nan, 'a|c'])
+
+page5_2 = {'key': ['One', 'Two'], 'ltable': [1, 2]}
+page5_21 = {'key': ['One', 'Two'], 'rtable': [4, 5]}
+df5_2= pd.DataFrame(page5_2)
+df5_21 = pd.DataFrame(page5_21)
+df5_2.merge(df5_21,on= 'key')
