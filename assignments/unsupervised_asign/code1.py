@@ -25,8 +25,7 @@ print(dict(zip(unique,counts)))
 
 df['cluster'] = kmeans.labels_
 sns.set_style('whitegrid')
-sns.lmplot('mean_dist_day', 'mean_over_speed_perc',data=df, hue='cluster',
-           palette='coolwarm',size=6,aspect=1,fit_reg=False)
+sns.lmplot('self_reference_max_shares', 'mean_over_speed_perc',data=df, hue='cluster', palette='coolwarm',size=6,aspect=1,fit_reg=False)
 
 
 
